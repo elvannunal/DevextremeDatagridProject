@@ -77,7 +77,6 @@ export class EmployeesComponent {
     this.employeeService.getEmployee().subscribe(
       (response: any) => {
         this.allEmployee = response.data
-
       },
       (error: any) => {
         console.error(error);
@@ -88,35 +87,27 @@ export class EmployeesComponent {
   // Ekleme İşlemleri
 
   showAddEmployeePopup(): void {
-    this.addEmployeePopupVisible = true;
+    this.addEmployeePopupVisible=true;
   }
   addEmployee() {
+
     this.employeeService.addEmployee(this.newEmployee).subscribe(
       (response: any) => {
         alert('Employee added successfully');
-        console.log('Add response:', response);
-        this.addEmployeePopupVisible = false;
-        this.popupVisible=false;
+        this.addEmployeePopupVisible=false
         this.getAllEmployees();
       },
       error => {
         console.error(error);
-        this.addEmployeePopupVisible = false;
-        this.popupVisible=false;
+        this.addEmployeePopupVisible=false
+        this.popupVisible=false
       }
     );
   }
 
-  closeAddEmployeePopup(): void {
-    this.addEmployeePopupVisible = false;
-  }
-
-
   //Güncelleme işlemleri
   editEmployee(selectedEmployee: EmployeeDto) {
-    this.popupVisible=true;
-    debugger
-    this.editEmployeePopupVisible = true;
+    this.editEmployeePopupVisible=true;
     this.selectedEmployee = {
       id: selectedEmployee.id,
       firstName: selectedEmployee.firstName,
@@ -136,27 +127,23 @@ export class EmployeesComponent {
     this.isUpdate = true;
     this.selectedEmp = { ...selectedEmployee };
     this.editEmp = { ...selectedEmployee };
+
   }
 
   updateEmployee() {
-    debugger
+
     this.employeeService.updateEmployee(this.editEmp.id, this.editEmp).subscribe(
       (response: any) => {
         alert('Employee updated successfully');
-        console.log('Update response:', response);
-
-        this.popupVisible=false;
+        this.editEmployeePopupVisible=false
         this.getAllEmployees();
       },
       error => {
         console.error(error);
-        this.editEmployeePopupVisible = false;
+        this.addEmployeePopupVisible=false
+        this.popupVisible=false
       }
     );
-  }
-
-  closeEditEmployeePopup(): void {
-    this.editEmployeePopupVisible = false;
   }
 
   //Sağ Click Menüsü
@@ -170,7 +157,8 @@ export class EmployeesComponent {
       onItemClick: () => {
         this.showAddEmployeePopup();
         this.popupVisible=true;
-        this.addEmployeePopupVisible=true;
+        this.addEmployeePopupVisible=true
+
       }
     };
     const updateEmployeeItem = {
@@ -179,6 +167,7 @@ export class EmployeesComponent {
         this.editEmployee(e.row.data);
         this.popupVisible=true;
         this.editEmployeePopupVisible=true;
+
       }
     };
     const deleteEmployeeItem = {
@@ -186,7 +175,6 @@ export class EmployeesComponent {
       onItemClick: () => {
         this.showDeleteConfirmation(e.row.data);
         this.popupVisible=false;
-        this.deleteEmployeePopupVisible=false;
       }
     };
     contextMenuItems.push(addEmployeeItem, updateEmployeeItem, deleteEmployeeItem);
@@ -206,7 +194,6 @@ export class EmployeesComponent {
         alert('Employee deleted successfully');
         console.log('Delete response:', response);
         this.popupVisible=false;
-
         this.getAllEmployees();
       },
       error => {

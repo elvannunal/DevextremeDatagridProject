@@ -21,8 +21,6 @@
     <dxi-column dataField="address"> </dxi-column>
     <dxi-column dataField="countryCode"> </dxi-column>
 
-
-
   </dx-data-grid>
   <dx-popup  [(visible)]="popupVisible" [hideOnOutsideClick]="true" [title]="'Employee Popup'" [width]="700"
     [height]="360" class="m-3" >
@@ -42,9 +40,9 @@
     </dx-form>
 
     <div class="mt-3">
-      <dx-button text="Ekle" (onClick)="addEmployee()" [disabled]="editEmployeePopupVisible || deleteEmployeePopupVisible" class="dx-btn">
+      <dx-button text="Ekle" (onClick)="addEmployee()" [(visible)]="addEmployeePopupVisible" class="dx-btn">
       </dx-button>
-      <dx-button text="Güncelle" (onClick)="updateEmployee()" [disabled]="addEmployeePopupVisible || deleteEmployeePopupVisible" class="dx-btn">
+      <dx-button text="Güncelle" (onClick)="updateEmployee()" [(visible)]="editEmployeePopupVisible" class="dx-btn">
       </dx-button>
       <dx-button text="Sil" (onClick)="showDeleteConfirmation(selectedEmployee)" [disabled]="editEmployeePopupVisible || addEmployeePopupVisible" class="dx-btn">
       </dx-button>
