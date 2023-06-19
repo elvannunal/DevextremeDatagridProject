@@ -20,12 +20,12 @@
     <dxi-column dataField="notes"> </dxi-column>
     <dxi-column dataField="address"> </dxi-column>
     <dxi-column dataField="countryCode"> </dxi-column>
-    <dxi-column dataField="definition"> </dxi-column>
+
 
 
   </dx-data-grid>
   <dx-popup [visible]="addEmployeePopupVisible || editEmployeePopupVisible " [title]="'Employee Popup'" [width]="700"
-    [height]="360" (onHiding)="closeAddEmployeePopup || closeEditEmployeePopup " class="m-3">
+    [height]="360"  class="m-3">
     <dx-form [formData]="isUpdate? editEmp: newEmployee">
       <dxi-item itemType="group" [colCount]="2">
         <dxi-item dataField="firstName"></dxi-item>
@@ -37,7 +37,7 @@
         <dxi-item dataField="notes"></dxi-item>
         <dxi-item dataField="address"></dxi-item>
         <dxi-item dataField="countryCode"></dxi-item>
-        <dxi-item dataField="definition"></dxi-item>
+
       </dxi-item>
     </dx-form>
 
