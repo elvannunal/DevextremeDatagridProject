@@ -24,8 +24,8 @@
 
 
   </dx-data-grid>
-  <dx-popup [visible]="addEmployeePopupVisible || editEmployeePopupVisible " [title]="'Employee Popup'" [width]="700"
-    [height]="360"  class="m-3">
+  <dx-popup  [(visible)]="popupVisible" [hideOnOutsideClick]="true" [title]="'Employee Popup'" [width]="700"
+    [height]="360" class="m-3" >
     <dx-form [formData]="isUpdate? editEmp: newEmployee">
       <dxi-item itemType="group" [colCount]="2">
         <dxi-item dataField="firstName"></dxi-item>
@@ -42,7 +42,7 @@
     </dx-form>
 
     <div class="mt-3">
-      <dx-button text="Ekle" (onClick)="addEmployee()" [disabled]="editEmployeePopupVisible || deleteEmployeePopupVisible " class="dx-btn">
+      <dx-button text="Ekle" (onClick)="addEmployee()" [disabled]="editEmployeePopupVisible || deleteEmployeePopupVisible" class="dx-btn">
       </dx-button>
       <dx-button text="Güncelle" (onClick)="updateEmployee()" [disabled]="addEmployeePopupVisible || deleteEmployeePopupVisible" class="dx-btn">
       </dx-button>

@@ -20,7 +20,7 @@ export class EmployeesComponent {
   isUpdating: boolean = false;
   selectedEmp: any;
   isUpdate: boolean = false;
-
+  popupVisible :boolean=false;
   constructor(private employeeService: EmployeeService,
               private countryService: CountryService) { }
 
@@ -96,11 +96,13 @@ export class EmployeesComponent {
         alert('Employee added successfully');
         console.log('Add response:', response);
         this.addEmployeePopupVisible = false;
+        this.popupVisible=false;
         this.getAllEmployees();
       },
       error => {
         console.error(error);
         this.addEmployeePopupVisible = false;
+        this.popupVisible=false;
       }
     );
   }
@@ -112,6 +114,7 @@ export class EmployeesComponent {
 
   //Güncelleme işlemleri
   editEmployee(selectedEmployee: EmployeeDto) {
+    this.popupVisible=true;
     debugger
     this.editEmployeePopupVisible = true;
     this.selectedEmployee = {
@@ -141,7 +144,8 @@ export class EmployeesComponent {
       (response: any) => {
         alert('Employee updated successfully');
         console.log('Update response:', response);
-        this.editEmployeePopupVisible = false;
+
+        this.popupVisible=false;
         this.getAllEmployees();
       },
       error => {
@@ -150,7 +154,6 @@ export class EmployeesComponent {
       }
     );
   }
-
 
   closeEditEmployeePopup(): void {
     this.editEmployeePopupVisible = false;
@@ -166,18 +169,24 @@ export class EmployeesComponent {
       text: 'Ekle',
       onItemClick: () => {
         this.showAddEmployeePopup();
+        this.popupVisible=true;
+        this.addEmployeePopupVisible=true;
       }
     };
     const updateEmployeeItem = {
       text: 'Güncelle',
       onItemClick: () => {
         this.editEmployee(e.row.data);
+        this.popupVisible=true;
+        this.editEmployeePopupVisible=true;
       }
     };
     const deleteEmployeeItem = {
       text: 'Sil',
       onItemClick: () => {
         this.showDeleteConfirmation(e.row.data);
+        this.popupVisible=false;
+        this.deleteEmployeePopupVisible=false;
       }
     };
     contextMenuItems.push(addEmployeeItem, updateEmployeeItem, deleteEmployeeItem);
@@ -196,7 +205,8 @@ export class EmployeesComponent {
       response => {
         alert('Employee deleted successfully');
         console.log('Delete response:', response);
-        this.deleteEmployeePopupVisible=false
+        this.popupVisible=false;
+
         this.getAllEmployees();
       },
       error => {
