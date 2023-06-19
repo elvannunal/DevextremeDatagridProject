@@ -44,7 +44,7 @@
       </dx-button>
       <dx-button text="Güncelle" (onClick)="updateEmployee()" [(visible)]="editEmployeePopupVisible" class="dx-btn">
       </dx-button>
-      <dx-button text="Sil" (onClick)="showDeleteConfirmation(selectedEmployee)" [disabled]="editEmployeePopupVisible || addEmployeePopupVisible" class="dx-btn">
+      <dx-button text="Sil" (onClick)="showDeleteConfirmation(selectedEmployee)" [(visible)]="deleteEmployeePopupVisible" class="dx-btn">
       </dx-button>
     </div>
 

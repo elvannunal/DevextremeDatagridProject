@@ -87,7 +87,9 @@ export class EmployeesComponent {
   // Ekleme İşlemleri
 
   showAddEmployeePopup(): void {
+    this.popupVisible=true;
     this.addEmployeePopupVisible=true;
+
   }
   addEmployee() {
 
@@ -107,7 +109,9 @@ export class EmployeesComponent {
 
   //Güncelleme işlemleri
   editEmployee(selectedEmployee: EmployeeDto) {
+    this.popupVisible=true;
     this.editEmployeePopupVisible=true;
+
     this.selectedEmployee = {
       id: selectedEmployee.id,
       firstName: selectedEmployee.firstName,
@@ -136,6 +140,7 @@ export class EmployeesComponent {
       (response: any) => {
         alert('Employee updated successfully');
         this.editEmployeePopupVisible=false
+
         this.getAllEmployees();
       },
       error => {
