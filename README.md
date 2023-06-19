@@ -1,27 +1,4 @@
 # MeetingPointTurkeyTask
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Bu assessment iki sayfan oluşmaktadır. İlk olarak karşınıza Dasboard sayfası gelmektedir.Bir diğer seçenek ise Employe ile ilgili işlemlerin olduğu sayfadır.
+Bu sayfada devextreme verileri listelemek için datagrid, verileri eklemek, güncellemek ve silmek için ise yine devextreme in popup'ı kullanılmıştır. Burada ekleme, güncelleme silme işlemlerini sağ tık kullanarak rahatça gerçekleştirebilirsiniz. Aynı zamanda sayfada kolon bazlı ya da toplu olarak grid'ün tamamında arama yapabilme özelliği eklenmiştir. Ayrıca sayfa açılır açılmaz ilk satıra focus olma, datagridin kolonlarının genişliğini istenilen şekilde genişletip daratlma gibi ayrıca kullanım kolaylığı olması açısından eklenmiştir. Ayrıca data grid de paging eklenerek sayfada kullanıcı deneyimi gözetilmiştir. Dashboard sayfasına gelecek olursam, orada kullanıcıların pozisyon dağılımları ve ülke dağılımları verilmiştir. Ayrıca bu dashboard'da gösterilen verileri png, jpeg ve print gibi özellikler ile de çıksının alınabileceği bir eklenti eklenmiştir. 
