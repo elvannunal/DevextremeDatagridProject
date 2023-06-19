@@ -1,0 +1,12 @@
+.example-container {
+  width:auto;
+  height:700px;
+  margin: 10px;
+  border: 1px solid #555;
+}
+mat-nav-list {
+  width: 200px;
+}
+.dashboardLink,.employeeLink{
+  border-bottom: 1px black solid;
+}

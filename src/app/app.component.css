@@ -1,0 +1,21 @@
+html,*{
+  margin:0px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+.container {
+  display: flex;
+}
+.container app-side-bar {
+  flex: 0 0 150px;
+  margin-top:80px;
+  width: 90px;
+}
+.caption{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top:15px;
+}

@@ -1,0 +1,9 @@
+.example-container {
+  width:auto;
+  height:700px;
+  margin: 10px;
+  border: 1px solid #555;
+}
+.dx-btn{
+  margin-right: 12px;
+}
